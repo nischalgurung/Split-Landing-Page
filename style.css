@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --active-width: 75vw;
+  --other-width: 25vw;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  width: 100vw;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.container {
+  display: flex;
+  position: relative;
+}
+.left,
+.right {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.5s ease-in;
+}
+.left {
+  background: url("https://i.ytimg.com/vi/5bgWxMGnlvc/maxresdefault.jpg") center
+    center/cover no-repeat;
+}
+.left::before {
+  content: "";
+  background-color: rgba(2, 255, 23, 0.219);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: width 0.5s ease-in;
+}
+.right {
+  background: url("https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/FB_JmQCVEAEdboQ.jpg")
+    center center/cover no-repeat;
+}
+.right::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.685);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: width 0.5s ease-in;
+}
+.left-hover .left {
+  width: var(--active-width);
+}
+.left-hover .left::before {
+  width: var(--active-width);
+}
+.left-hover .right {
+  width: var(--other-width);
+}
+.left-hover .right::before {
+  width: var(--other-width);
+}
+.right-hover .left {
+  width: var(--other-width);
+}
+.right-hover .left::before {
+  width: var(--other-width);
+}
+.right-hover .right {
+  width: var(--active-width);
+}
+.right-hover .right::before {
+  width: var(--active-width);
+}
+
+.content {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0px 2px 10px black;
+  background: transparent;
+  font-weight: bold;
+  color: white;
+  border: 3px solid white;
+  font-size: 1.5rem;
+  padding: 1rem 2.5rem;
+}
+button:focus {
+  outline: none;
+}
+button:active {
+  transform: scale(0.98);
+}
+@media (max-width: 480px) {
+  .content {
+    font-size: 0.7rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
